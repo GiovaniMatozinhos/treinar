@@ -5,11 +5,14 @@ package br.com.treinar.aula;
 public class TesteConta {
 	
 	public static void main(String[] args) {
-		Conta conta1 = new Conta(300);
+		Conta conta1 = new Conta();
 		
-		conta1.cliente = new Cliente();
+		conta1.setNumero(100);
+		
+		
+//		conta1.cliente = new Cliente();
 
-	    System.out.println("O limite de credito:"+conta1.limiteCredito);
+//	    System.out.println("O limite de credito:"+conta1.limiteCredito);
 //		
 //		Conta conta2 = conta1;
 //		

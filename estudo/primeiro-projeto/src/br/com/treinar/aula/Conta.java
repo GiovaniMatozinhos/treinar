@@ -2,23 +2,60 @@ package br.com.treinar.aula;
 
 public class Conta {
 
-	public int numero;
-	public double saldo;
-	public Cliente cliente;
-	public double limiteCredito;
-	
+	private int numero;
+	private double saldo;
+	private Cliente cliente;
+	private double limiteCredito;
+
+	// Construtores
+
 	public Conta() {
 		super();
-		System.out.println("Conta criada!");
+		System.out.println("O objeto conta foi criado!");
 	}
-	
+
 	public Conta(double limiteCredito) {
 		this();
 		this.limiteCredito = limiteCredito;
 	}
-	
-	public Conta(double limiteCredito, String cliente) {
+
+	public Conta(double limiteCredito, String nomeCliente) {
 		this(limiteCredito);
+		this.cliente = new Cliente();
+		this.cliente.nome = nomeCliente;
+	}
+
+	// Métodos
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public double getLimiteCredito() {
+		return limiteCredito;
+	}
+
+	public void setLimiteCredito(double limiteCredito) {
+		this.limiteCredito = limiteCredito;
 	}
 
 	public boolean sacar(double valor) {
@@ -35,7 +72,6 @@ public class Conta {
 	}
 
 	public double consultarSaldo() {
-		return saldo;
+		return this.saldo;
 	}
-
 }
