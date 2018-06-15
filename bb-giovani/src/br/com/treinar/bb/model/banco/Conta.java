@@ -2,7 +2,7 @@ package br.com.treinar.bb.model.banco;
 
 import br.com.treinar.bb.model.Cliente;
 
-public class Conta {
+public abstract class Conta {
 
 	private int numero;
 	private double saldo;
@@ -32,11 +32,6 @@ public class Conta {
 		this.cliente = cliente;
 	}
 
-	public Conta() {
-		super();
-		System.out.println("O Objeto foi criado");
-	}
-
 	public boolean sacar(double valor) {
 		boolean deuParaSacar = false;
 		if (valor <= saldo) {
@@ -45,12 +40,16 @@ public class Conta {
 		}
 		return deuParaSacar;
 	}
-
-	public void depositar(double valor) {
-		saldo += valor;
-	}
+	
+	public abstract void depositar(double valor);
 
 	public double consultarSaldo() {
 		return this.saldo;
 	}
+
+	@Override
+	public String toString() {
+		return "Conta [numero=" + numero + ", saldo=" + saldo + ", cliente=" + cliente.getNome()+ "]";
+	}
+		
 }
